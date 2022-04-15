@@ -17,9 +17,9 @@
     z-index: -1
     padding: 34px 40px 38px 40px
     &_close
-        position: relative
-        top: 32px
-        right: 32px
+        position: absolute
+        top: 3px
+        right: 10px
         width: 25px
         height: 25px
         color: $main-color
@@ -66,6 +66,12 @@
             line-height: 22px
             text-align: center
             color: #0D0D0D
+    .error
+        border: 1px solid red
+    label.error
+        border: none
+        text-align: center
+        margin-bottom: 15px
 
 #consultation, #order, #thanks
     display: none
