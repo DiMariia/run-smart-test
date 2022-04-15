@@ -7,9 +7,14 @@ $(document).ready(function(){
     });
 
     $('ul.catalog_tabs').on('click', 'li:not(.catalog_tab_active)', function() {
-        $(this)
-          .addClass('catalog_tab_active').siblings().removeClass('catalog_tab_active')
-          .closest('div.container').find('div.catalog_content').removeClass('catalog_content_active').eq($(this).index()).addClass('catalog_content_active');
+        $(this).addClass('catalog_tab_active')
+          .siblings()
+          .removeClass('catalog_tab_active')
+          .closest('div.container')
+          .find('div.catalog_content')
+          .removeClass('catalog_content_active')
+          .eq($(this).index())
+          .addClass('catalog_content_active');
       });
 
     $('.catalog_item_link').each(function(i) {
