@@ -32,4 +32,19 @@ $(document).ready(function(){
             $('.catalog_item_list').eq(i).toggleClass('catalog_item_list_active');
         })
     })
+// Modal
+
+    $('[data-modal=consultation]').on('click', function() {
+        $('.overlay, #consultation').fadeIn('slow');
+    });
+    $('.modal_close').on('click', function() {
+        $('.overlay, #consultation, #thanks, #order').fadeOut('slow');
+    });
+
+    $('.button_mini').each(function(i) {
+        $(this).on('click', function() {
+            $('#order .modal_descr').text($('.catalog_item_subtitle').eq(i).text());
+            $('.overlay, #order').fadeIn('slow');
+        })
+    });
 });
