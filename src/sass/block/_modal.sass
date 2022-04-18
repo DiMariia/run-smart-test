@@ -12,14 +12,16 @@
     left: 50%
     transform: translate(-50%, -50%)
     width: 380px
-    height: 410px
+    height: auto
+    min-height: 410px
     background-color: #F2F2F2
     z-index: -1
     padding: 34px 40px 38px 40px
+    overflow: visible
     &_close
         position: absolute
-        top: 3px
-        right: 10px
+        top: -4px
+        right: -40px
         width: 25px
         height: 25px
         color: $main-color
