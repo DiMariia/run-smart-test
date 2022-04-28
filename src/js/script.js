@@ -1,5 +1,3 @@
-let isOpened = false;
-
 $(document).ready(function(){
     $('.carousel_inner').slick({
         speed: 1000,
@@ -36,8 +34,8 @@ $(document).ready(function(){
     })
 // Modal
 
-    $('[data-modal=consultation]').on('click', function() {
-        isOpened = false;
+    $('[data-modal=consultation]').on('click', function(event) {
+        event.stopPropagation();
         $('.overlay, #consultation').fadeIn('slow');
     });
     $('.modal_close').on('click', function() {
@@ -45,8 +43,8 @@ $(document).ready(function(){
     });
 
     $('.button_mini').each(function(i) {
-        $(this).on('click', function() {
-            isOpened = false;
+        $(this).on('click', function(event) {
+            event.stopPropagation();
             $('#order .modal_descr').text($('.catalog_item_subtitle').eq(i).text());
             $('.overlay, #order').fadeIn('slow');
         })
@@ -88,13 +86,7 @@ $(document).ready(function(){
 
 
 $(document).on('click', function(event) {
-    if (!$(event.target).closest('.modal').length && !$(event.target).is('modal') && isOpened) {
+    if (!$(event.target).closest('.modal').length && !$(event.target).is('modal')) {
         $('.overlay, #consultation, #thanks, #order').fadeOut('slow');
     }
-    //This is done to prevent the first click
-    // When we click on the button to open the form
-    // We don't wnat to close it immidiatelly
-    // This variable controlls this
-    // TODO: Refactor this please
-    isOpened = true;
 });
