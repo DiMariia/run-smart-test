@@ -235,6 +235,20 @@
                 img
                     width: 2rem
                     height: 2rem
+    .overlay
+        .modal
+            width: 320px
+            &_descr
+                font-size: 0.7rem
+            &_close
+                display: none
+        .feed-form
+            width: 240px
+        .button_submit
+            font-size: 0.9rem
+        label.error
+            font-size: 0.8rem
+
 @media (max-width: 425px)
     .container
         .button
@@ -283,3 +297,22 @@
             margin-bottom: 0.3rem !important
         &_social
             width: 100% !important
+    .overlay
+        .modal
+            width: 80%
+            min-height: auto
+            padding: 35px 20px 45px 20px
+            &_subtitle
+                font-size: 0.8rem
+            &_descr
+                font-size: 0.6rem
+        .feed-form
+            width: 100%
+            input
+                height: 45px
+                font-size: 0.7rem
+        .button_submit
+            height: 45px
+            font-size: 0.7rem
+        label.error
+            font-size: 0.6rem
